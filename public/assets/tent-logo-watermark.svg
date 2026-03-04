@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" role="img" aria-label="Tent watermark">
+  <g fill="none" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M35 178 L150 34 L265 178 Z"/>
+    <path d="M150 34 V178"/>
+    <path d="M95 178 L150 98 L205 178"/>
+    <path d="M24 186 H276"/>
+  </g>
+</svg>
