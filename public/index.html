@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeltlager Verein | Annual Kids Camp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav">
+      <div class="brand">Zeltlager Verein</div>
+      <div class="nav-links">
+        <a href="#news">News</a>
+        <a href="#team">Team</a>
+        <a href="#info">Information</a>
+        <a href="#timings">Timings</a>
+        <a href="#gallery">Past Camps</a>
+        <a href="#register" class="nav-cta">Register</a>
+      </div>
+    </nav>
+
+    <div class="hero-logo-wrap" aria-label="Camp logo">
+      <img src="assets/tent-logo-color.svg" alt="Zeltlager tent logo" class="hero-logo" />
+    </div>
+
+    <div class="hero-content">
+      <p class="kicker">Since 1988 • Voluntary Association</p>
+      <h1>Adventures, friendships, and unforgettable summer nights.</h1>
+      <p>
+        Our annual camp welcomes children for one magical week of games, nature, campfires,
+        and growth — guided by trained volunteers.
+      </p>
+      <a href="#register" class="btn-primary">Register your child now</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="news" class="section">
+      <div class="section-title">
+        <h2>Latest News</h2>
+        <p>Everything parents should know before camp starts.</p>
+      </div>
+      <div class="cards news-grid">
+        <article class="card"><h3>Registration for Camp 2027 is open</h3><p>Places are limited to 120 children. Early registration is recommended.</p></article>
+        <article class="card"><h3>Info Evening for Parents</h3><p>Join us on 12 May, 19:00, at the community center for all camp details.</p></article>
+        <article class="card"><h3>Volunteer Team expanded</h3><p>We are happy to welcome six new leaders with first-aid certification.</p></article>
+      </div>
+    </section>
+
+    <section id="team" class="section alt">
+      <div class="section-title"><h2>Our Team</h2><p>Experienced volunteers with a heart for children.</p></div>
+      <div class="cards team-grid">
+        <article class="card team-card"><h3>Maria Fischer</h3><p>Camp Director</p></article>
+        <article class="card team-card"><h3>David Klein</h3><p>Safety & First Aid Lead</p></article>
+        <article class="card team-card"><h3>Lea Hoffmann</h3><p>Program Coordinator</p></article>
+        <article class="card team-card"><h3>Ali Demir</h3><p>Kitchen & Nutrition</p></article>
+      </div>
+    </section>
+
+    <section id="info" class="section">
+      <div class="section-title"><h2>Important Information</h2></div>
+      <div class="info-list">
+        <div><strong>Location:</strong> Forest Camp Ground, Sonnenweg 14</div>
+        <div><strong>Age group:</strong> 8–15 years</div>
+        <div><strong>Emergency coverage:</strong> 24/7 reachable team phone during camp week</div>
+        <div><strong>What to bring:</strong> Sleeping bag, weatherproof clothes, water bottle, flashlight</div>
+      </div>
+    </section>
+
+    <section id="timings" class="section alt">
+      <div class="section-title"><h2>Timings</h2></div>
+      <div class="schedule card">
+        <p><strong>Day 1:</strong> Arrival & setup (10:00–13:00)</p>
+        <p><strong>Daily:</strong> Breakfast 08:00, Workshops 10:00, Team Games 14:30, Campfire 20:00</p>
+        <p><strong>Final Day:</strong> Parent visit + pickup (15:00–17:00)</p>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="section-title"><h2>Pictures from Previous Camps</h2><p>Add images on the server in <code>uploads/gallery/</code> and they appear here automatically.</p></div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <section id="register" class="section alt">
+      <div class="section-title"><h2>Registration Survey for the Next Camp</h2><p>Please complete all required details and sign as parent/legal guardian.</p></div>
+      <form id="registrationForm" class="card form-grid">
+        <label>Child's full name*<input type="text" name="childName" required /></label>
+        <label>Child's age (6–18)*<input type="number" name="childAge" min="6" max="18" required /></label>
+        <label>Parent/Guardian name*<input type="text" name="parentName" required /></label>
+        <label>Email*<input type="email" name="email" required /></label>
+        <label>Phone*<input type="tel" name="phone" required /></label>
+        <label>Allergies<textarea name="allergies" rows="2"></textarea></label>
+        <label>Medication details<textarea name="medications" rows="2"></textarea></label>
+        <label>Dietary needs<textarea name="dietaryNeeds" rows="2"></textarea></label>
+        <label>Emergency contact person*<input type="text" name="emergencyContact" required /></label>
+        <label>Emergency phone*<input type="tel" name="emergencyPhone" required /></label>
+        <label class="full">Additional notes<textarea name="notes" rows="3"></textarea></label>
+        <label class="full checkbox-row"><input type="checkbox" name="consentPhoto" />I allow the association to use camp photos of my child for internal communication.</label>
+        <div class="full signature-wrapper">
+          <p class="signature-label">Parent/Guardian Signature* (draw below)</p>
+          <canvas id="signaturePad" width="700" height="220" aria-label="Signature pad"></canvas>
+          <button class="btn-secondary" type="button" id="clearSignature">Clear signature</button>
+        </div>
+        <label class="full checkbox-row"><input type="checkbox" name="agreed" required />I confirm that all provided information is correct and I consent to participation.</label>
+        <div class="full form-actions"><button type="submit" class="btn-primary">Submit registration</button><p id="formMessage" aria-live="polite"></p></div>
+      </form>
+    </section>
+
+    <section class="section" id="admin">
+      <div class="section-title"><h2>Organizer Area</h2><p>Admin login required to view registered attendees.</p></div>
+
+      <div class="card admin-auth-card" id="adminLoginCard">
+        <form id="adminLoginForm" class="admin-auth-form">
+          <label>Admin password
+            <input type="password" name="password" autocomplete="current-password" required />
+          </label>
+          <button type="submit" class="btn-secondary">Log in as admin</button>
+          <p id="adminAuthMessage" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div id="adminPanel" class="hidden">
+        <div class="card admin-header-row">
+          <p>You are logged in as admin.</p>
+          <button id="adminLogoutButton" class="btn-secondary" type="button">Log out</button>
+        </div>
+        <div class="card table-wrapper">
+          <button id="refreshRegistrations" class="btn-secondary">Refresh list</button>
+          <table>
+            <thead>
+              <tr><th>Date</th><th>Child</th><th>Age</th><th>Parent</th><th>Contact</th><th>Medical / Notes</th></tr>
+            </thead>
+            <tbody id="registrationTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>© Zeltlager Verein • Built by volunteers for families.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>

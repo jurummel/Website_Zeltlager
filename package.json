@@ -1,0 +1,11 @@
+{
+  "name": "zeltlager-website",
+  "version": "1.0.0",
+  "description": "Modern website for an annual kids camp association",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js"
+  }
+}
